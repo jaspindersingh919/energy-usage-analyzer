@@ -40,7 +40,7 @@ print(summary)
 # STEP 4: VISUALIZATIONS
 # -----------------------------
 
-# 1️⃣ NB Load vs NB Demand over time
+# NB Load vs NB Demand over time
 plt.figure()
 plt.plot(df["HOUR"], df["NB_LOAD"], label="NB Load")
 plt.plot(df["HOUR"], df["NB_DEMAND"], label="NB Demand")
@@ -51,7 +51,7 @@ plt.legend()
 plt.tight_layout()
 plt.show()
 
-# 2️⃣ Average NB Load by Hour of Day
+# Average NB Load by Hour of Day
 hourly_avg = df.groupby("hour_of_day")["NB_LOAD"].mean()
 
 plt.figure()
@@ -63,7 +63,7 @@ plt.xticks(range(0, 24))
 plt.tight_layout()
 plt.show()
 
-# 3️⃣ Average NB Load by Day of Week
+# Average NB Load by Day of Week
 day_order = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 daily_avg = df.groupby("day_of_week")["NB_LOAD"].mean().reindex(day_order)
 
